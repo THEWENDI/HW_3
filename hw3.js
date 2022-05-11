@@ -55,16 +55,14 @@ tableInfo.tableHeader.forEach((ele) => {
     firstrow.appendChild(createth(ele))
 });
 
+//Destructuring
+const { tableContent: [student1, student2, student3, student4] } = tableInfo
+
 //secondrow
 let secondrow = document.createElement('tr')
 studenttable.appendChild(secondrow);
 
-
-let tableContent = tableInfo.tableContent;
-
-let tableContent1 = Object.values(tableContent[0]);
-
-tableContent1.forEach((ele) => {
+Object.values(student1).forEach((ele) => {
     secondrow.appendChild(createtd(ele));
 });
 
@@ -72,9 +70,7 @@ tableContent1.forEach((ele) => {
 let thirdrow = document.createElement('tr')
 studenttable.appendChild(thirdrow);
 
-let tableContent2 = Object.values(tableContent[1]);
-
-tableContent2.forEach((ele) => {
+Object.values(student2).forEach((ele) => {
     thirdrow.appendChild(createtd(ele));
 });
 
@@ -82,9 +78,7 @@ tableContent2.forEach((ele) => {
 let fourthrow = document.createElement('tr')
 studenttable.appendChild(fourthrow);
 
-let tableContent3 = Object.values(tableContent[2]);
-
-tableContent3.forEach((ele) => {
+Object.values(student3).forEach((ele) => {
     fourthrow.appendChild(createtd(ele));
 });
 
@@ -92,9 +86,7 @@ tableContent3.forEach((ele) => {
 let fifthrow = document.createElement('tr')
 studenttable.appendChild(fifthrow);
 
-let tableContent4 = Object.values(tableContent[3]);
-
-tableContent4.forEach((ele) => {
+Object.values(student4).forEach((ele) => {
     fifthrow.appendChild(createtd(ele));
 });
 
