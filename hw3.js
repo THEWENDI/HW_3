@@ -29,9 +29,9 @@ const tableInfo = {
     ],
 };
 
-let studenttable = document.createElement('table');
+let studentTable = document.createElement('table');
 studenttable.className = 'studenttable'
-document.body.appendChild(studenttable);
+document.body.append(studentTable);
 
 //th,td function 
 function createth(content) {
@@ -46,50 +46,29 @@ function createtd(content) {
     return td;
 }
 
-//firstrow
+//tableHeader
 let firstrow = document.createElement('tr')
-studenttable.appendChild(firstrow);
+studenttable.append(firstrow);
 
 
 tableInfo.tableHeader.forEach((ele) => {
-    firstrow.appendChild(createth(ele))
+    firstrow.append(createth(ele))
 });
 
 //Destructuring
-const { tableContent: [student1, student2, student3, student4] } = tableInfo
+// const { tableContent: [student1, student2, student3, student4] } = tableInfo
 
-//secondrow
-let secondrow = document.createElement('tr')
-studenttable.appendChild(secondrow);
+const { tableContent } = tableInfo;
 
-Object.values(student1).forEach((ele) => {
-    secondrow.appendChild(createtd(ele));
-});
+//tableContent
+for (let i = 0; i < tableContent.length; i++) {
+    let row = document.createElement('tr')
+    studenttable.append(row);
+    Object.values(tableContent[i]).forEach((ele) => {
+        row.append(createtd(ele));
+    })
 
-//thirdrow
-let thirdrow = document.createElement('tr')
-studenttable.appendChild(thirdrow);
-
-Object.values(student2).forEach((ele) => {
-    thirdrow.appendChild(createtd(ele));
-});
-
-//fourthrow
-let fourthrow = document.createElement('tr')
-studenttable.appendChild(fourthrow);
-
-Object.values(student3).forEach((ele) => {
-    fourthrow.appendChild(createtd(ele));
-});
-
-//fifthrow
-let fifthrow = document.createElement('tr')
-studenttable.appendChild(fifthrow);
-
-Object.values(student4).forEach((ele) => {
-    fifthrow.appendChild(createtd(ele));
-});
-
+}
 
 
 //2.
@@ -97,7 +76,7 @@ const list = ['HTML', 'JavaScript', 'CSS', 'React', 'Redux', 'Java'];
 
 let olist = document.createElement('ol');
 olist.className = 'olist';
-document.body.appendChild(olist);
+document.body.append(olist);
 
 function createListItem(name) {
     let li = document.createElement('li');
@@ -109,17 +88,17 @@ function createListItem(name) {
 const orderedlist = document.querySelector('.olist');
 
 list.forEach((ele) => {
-    orderedlist.appendChild(createListItem(ele))
+    orderedlist.append(createListItem(ele))
 });
 
 let ulist = document.createElement('ul');
 ulist.className = 'ulist';
-document.body.appendChild(ulist);
+document.body.append(ulist);
 
 const unorderedlist = document.querySelector('.ulist');
 
 list.forEach((ele) => {
-    unorderedlist.appendChild(createListItem(ele))
+    unorderedlist.append(createListItem(ele))
 });
 
 //3.
@@ -134,7 +113,7 @@ const dropDownList = [
 
 let dropDown = document.createElement('select');
 dropDown.className = 'dropdownlist';
-document.body.appendChild(dropDown);
+document.body.append(dropDown);
 
 const dropdown = document.querySelector('.dropdownlist');
 
@@ -150,6 +129,6 @@ function createdropdownItem(name, value) {
 const dropdownList = document.querySelector('.dropdownlist');
 
 dropDownList.forEach((ele) => {
-    dropdown.appendChild(createdropdownItem(ele.content, ele.value))
+    dropdown.append(createdropdownItem(ele.content, ele.value))
 });
 
