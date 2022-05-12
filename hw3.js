@@ -56,7 +56,7 @@ tableInfo.tableHeader.forEach((ele) => {
 });
 
 //Destructuring
-// const { tableContent: [student1, student2, student3, student4] } = tableInfo
+const { tableContent: [student1, student2, student3, student4] } = tableInfo
 
 const { tableContent } = tableInfo;
 
