@@ -71,18 +71,18 @@ for (let i = 0; i < tableContent.length; i++) {
 }
 
 
-//2.
-const list = ['HTML', 'JavaScript', 'CSS', 'React', 'Redux', 'Java'];
+// //2.
+// const list = ['HTML', 'JavaScript', 'CSS', 'React', 'Redux', 'Java'];
 
-let olist = document.createElement('ol');
-olist.className = 'olist';
-document.body.append(olist);
+// let olist = document.createElement('ol');
+// olist.className = 'olist';
+// document.body.append(olist);
 
-function createListItem(name) {
-    let li = document.createElement('li');
-    li.textContent = name;
-    return li;
-}
+// function createListItem(name) {
+//     let li = document.createElement('li');
+//     li.textContent = name;
+//     return li;
+// }
 
 
 const orderedlist = document.querySelector('.olist');
